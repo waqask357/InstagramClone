@@ -30,6 +30,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
     private String allKickBoxers;
 
+    private Button btnTransition;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         txtGetData = findViewById(R.id.txtGetData);
 
         btnGetAllData = findViewById(R.id.btnGetAllData);
+
+        btnTransition=findViewById(R.id.btnNextActivity);
 
         txtGetData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,19 +72,30 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             public void onClick(View view) {
                 allKickBoxers = "";
                 ParseQuery<ParseObject> queryAll = ParseQuery.getQuery("KickBoxer");
+//                queryAll.whereGreaterThan("punchPower",600);
+                queryAll.whereGreaterThanOrEqualTo("punchPower", 544);
+                //to get only one object
+                queryAll.setLimit(1);
                 queryAll.findInBackground(new FindCallback<ParseObject>() {
                     @Override
                     public void done(List<ParseObject> objects, ParseException e) {
                         if (e == null) {
                             if (objects.size() > 0) {
                                 for (ParseObject kickBoxer : objects) {
-                                    allKickBoxers = allKickBoxers + kickBoxer.get("name")+" - "+"Punch Power: "+kickBoxer.get("punchPower") + "\n";
+                                    allKickBoxers = allKickBoxers + kickBoxer.get("name") + " - " + "Punch Power: " + kickBoxer.get("punchPower") + "\n";
                                 }
                                 FancyToast.makeText(SignUp.this, allKickBoxers, FancyToast.LENGTH_LONG, FancyToast.SUCCESS, true).show();
                             }
                         }
                     }
                 });
+            }
+        });
+
+        btnTransition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }
