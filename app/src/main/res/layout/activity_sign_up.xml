@@ -10,7 +10,7 @@
         android:id="@+id/edtName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="PLeae Enter the name of Kick boxer"
         android:inputType="textPersonName"
@@ -21,51 +21,50 @@
         android:id="@+id/edtPunchSpeed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Please Enter the punch speed"
         android:inputType="textPersonName"
         app:layout_constraintTop_toBottomOf="@+id/edtName"
-        tools:layout_editor_absoluteX="99dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <EditText
         android:id="@+id/edtPunchPower"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Please Enter the punch power"
+        android:inputType="textPersonName"
         app:layout_constraintTop_toBottomOf="@+id/edtPunchSpeed"
-        tools:layout_editor_absoluteX="99dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <EditText
         android:id="@+id/edtKickSpeed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Please Enter the kick speed"
+        android:inputType="textPersonName"
         app:layout_constraintTop_toBottomOf="@+id/edtPunchPower"
-        tools:layout_editor_absoluteX="99dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <EditText
         android:id="@+id/edtKickPower"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Please Enter the kick power"
+        android:inputType="textPersonName"
         app:layout_constraintTop_toBottomOf="@+id/edtKickSpeed"
-        tools:layout_editor_absoluteX="99dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:text="Save Kick boxer to server"
         app:layout_constraintTop_toBottomOf="@+id/edtKickPower"
         tools:layout_editor_absoluteX="97dp" />
@@ -74,7 +73,7 @@
         android:id="@+id/txtGetData"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="Get Data From Server"
         android:textColor="#F30707"
         android:textSize="30dp"
@@ -87,11 +86,12 @@
         android:id="@+id/btnGetAllData"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:background="#FFFF55"
         android:text="Get All Data"
         android:textColor="#AF0505"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtGetData" />
 
@@ -103,6 +103,8 @@
         android:text="Switch To Another Activity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGetAllData"
+        app:layout_constraintVertical_bias="0.081" />
 </androidx.constraintlayout.widget.ConstraintLayout>
