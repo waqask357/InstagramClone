@@ -2,6 +2,7 @@ package com.example.instagramclone;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -49,6 +50,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             public void done(ParseUser user, ParseException e) {
                                 if (user != null && e == null) {
                                     FancyToast.makeText(LoginActivity.this, user.getUsername() + " is logged in.", FancyToast.LENGTH_LONG, FancyToast.SUCCESS, true).show();
+                                    transitionToSocialMediaActivity();
                                 } else {
                                     FancyToast.makeText(LoginActivity.this, e.getMessage(), FancyToast.LENGTH_LONG, FancyToast.ERROR, true).show();
                                 }
@@ -59,5 +61,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btnSignUpLoginActivity:
                 break;
         }
+    }
+
+    private void transitionToSocialMediaActivity() {
+        Intent intent = new Intent(LoginActivity.this, SocialMediaActivity.class);
+        startActivity(intent);
     }
 }
